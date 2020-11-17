@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- {% for object in data %}
+    <ul>
+        <li>{{ object.question }}</li>
+
+    </ul>
+        
+    {% endfor %} -->
+
+    <table class="table table-striped- table-bordered table-hover ">
+        <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Question</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+        <tr>
+            <td>
+                {{forloop.counter }}
+            </td>
+            <td>
+                {{ object.question }}
+            </td>
+            <td>
+                <a href="{% url 'src:ques-detail' object.id %}" class="fa fa-eye">View</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+
+
+    </table>
+</body>
+</html>
